@@ -1,5 +1,25 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
 <body>
-<p th:text="${data}+' page'"></p>
+<header>
+    <h1>게시판</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/board/list}">목록</a></li>
+            <li><a th:href="@{/board/regist}">등록</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>환영합니다!</h2>
+        <p>게시판을 이용해보세요.</p>
+    </section>
+</main>
 </body>
 </html>
