@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpringBoard</title>
 </head>
 <body>
-<header>
-    <h1>게시판</h1>
-    <nav>
-        <ul>
-            <li><a th:href="@{/board/list}">목록</a></li>
-            <li><a th:href="@{/board/regist}">등록</a></li>
-        </ul>
-    </nav>
-</header>
+<h1>Welcome to SpringBoard!</h1>
 
-<main>
-    <section>
-        <h2>환영합니다!</h2>
-        <p>게시판을 이용해보세요.</p>
-    </section>
-</main>
+<div>
+    <h2>Menu</h2>
+    <ul>
+        <!-- 회원가입 링크 -->
+        <li><a href="/members/signup">회원가입</a></li>
+
+        <!-- 게시글 목록 링크 -->
+        <li><a href="/board/list">게시글 목록</a></li>
+
+        <!-- 게시글 작성 링크 -->
+        <li><a href="/board/regist">게시글 작성</a></li>
+    </ul>
+</div>
+
+<div>
+    <!-- 회원 이름이 있을 경우, 그 이름을 표시 -->
+    <p th:if="${session.username != null}">환영합니다, <span th:text="${session.username}">회원</span>님!</p>
+
+    <!-- 회원 이름이 없으면 안내 문구 표시 -->
+    <p th:if="${session.username == null}">회원가입 후 이용해 주세요.</p>
+</div>
 </body>
 </html>
