@@ -29,4 +29,7 @@ public class MemberService {
     public List<Member> findMembers(){
         return memberRepository.findByAll();
     }
+    public Optional<Member> fineOne(Long memberId){
+        return memberRepository.findById(memberId);
+    }
 }
