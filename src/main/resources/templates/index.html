@@ -24,10 +24,10 @@
 
 <div>
     <!-- 회원 이름이 있을 경우, 그 이름을 표시 -->
-    <p th:if="${session.username != null}">환영합니다, <span th:text="${session.username}">회원</span>님!</p>
+    <p th:if="${session.name != null}">환영합니다, <span th:text="${session.name}">회원</span>님!</p>
 
     <!-- 회원 이름이 없으면 안내 문구 표시 -->
-    <p th:if="${session.username == null}">회원가입 후 이용해 주세요.</p>
+    <p th:if="${session.name == null}">회원가입 후 이용해 주세요.</p>
 </div>
 </body>
 </html>
