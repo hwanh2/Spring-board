@@ -1,4 +1,4 @@
-package hwanhee.spring_board.controller;
+package hwanhee.spring_board.dto;
 
 public class MemberForm {
     private String name;
