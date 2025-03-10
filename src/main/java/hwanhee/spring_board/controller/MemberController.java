@@ -1,6 +1,7 @@
 package hwanhee.spring_board.controller;
 
 import hwanhee.spring_board.domain.Member;
+import hwanhee.spring_board.dto.MemberForm;
 import hwanhee.spring_board.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class MemberController {
     }
 
     @PostMapping("/signup")
-    public String signup(HttpSession session,MemberForm form){
+    public String signup(HttpSession session, MemberForm form){
         Member member = new Member();
         member.setName(form.getName());
         member.setPassword(form.getPassword());

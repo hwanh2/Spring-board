@@ -12,8 +12,12 @@ public class BoardController {
 
     @GetMapping("/regist")
     public String registForm(){
-        return "regist";
+        return "board/regist";
     }
+
+    @PostMapping("/regist")
+    public String regist()
+
 
 
 }
