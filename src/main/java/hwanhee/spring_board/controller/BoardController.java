@@ -1,5 +1,6 @@
 package hwanhee.spring_board.controller;
 
+import hwanhee.spring_board.dto.BoardForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,9 @@ public class BoardController {
     }
 
     @PostMapping("/regist")
-    public String regist()
+    public String regist(BoardForm form){
+
+    }
 
 
 

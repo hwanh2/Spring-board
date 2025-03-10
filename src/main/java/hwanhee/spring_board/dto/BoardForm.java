@@ -5,6 +5,15 @@ import hwanhee.spring_board.domain.Member;
 public class BoardForm {
     private String title;
     private Member member;
+    private String contnet;
+
+    public String getContnet() {
+        return contnet;
+    }
+
+    public void setContnet(String contnet) {
+        this.contnet = contnet;
+    }
 
     public BoardForm(String title, Member member) {
         this.title = title;
