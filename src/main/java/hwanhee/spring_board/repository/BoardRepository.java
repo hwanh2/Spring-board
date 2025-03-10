@@ -1,13 +1,14 @@
 package hwanhee.spring_board.repository;
 
 import hwanhee.spring_board.domain.Board;
-import org.springframework.stereotype.Repository;
+import hwanhee.spring_board.domain.Member;
 
 import java.util.List;
 
-@Repository
 public interface BoardRepository {
     Board save(Board board);
-    List<Board> findByAll();
+    List<Board> findAll();
+    List<Board> findByWriterId(Long writerId);
+    void deleteById(Long id);
 
 }
