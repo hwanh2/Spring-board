@@ -19,11 +19,7 @@ public class MemberService {
 
     @Transactional
     public Long join(Member member){
-        Optional<Member> result = memberRepository.findByName(member.getName());
-        // 중복 처리
-        result.ifPresent(m->{
-            throw new IllegalStateException("이미 존재하는 회원입니다.");
-        });
+        Member result = memberRepository.findByName(member.getName());
         memberRepository.save(member);
         return member.getId();
     }
@@ -34,4 +30,8 @@ public class MemberService {
     public Optional<Member> fineOne(Long memberId){
         return memberRepository.findById(memberId);
     }
+    public Member findByName(String name){
+        return memberRepository.findByName(name);
+    }
+
 }

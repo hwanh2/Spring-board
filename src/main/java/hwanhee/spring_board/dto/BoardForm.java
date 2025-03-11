@@ -4,21 +4,7 @@ import hwanhee.spring_board.domain.Member;
 
 public class BoardForm {
     private String title;
-    private Member member;
-    private String contnet;
-
-    public String getContnet() {
-        return contnet;
-    }
-
-    public void setContnet(String contnet) {
-        this.contnet = contnet;
-    }
-
-    public BoardForm(String title, Member member) {
-        this.title = title;
-        this.member = member;
-    }
+    private String content;
 
     public String getTitle() {
         return title;
@@ -28,11 +14,11 @@ public class BoardForm {
         this.title = title;
     }
 
-    public Member getMember() {
-        return member;
+    public String getContent() {
+        return content;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setContent(String content) {
+        this.content = content;
     }
 }
