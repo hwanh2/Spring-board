@@ -29,13 +29,15 @@ public class JpaMemberRepository implements MemberRepository {
     }
 
     @Override
-    public Optional<Member> findByName(String name) {
-        List<Member> result = em.createQuery("select m from Member m where m.name= :name",Member.class)
-                .setParameter("name",name)
+    public Member findByName(String name) {
+        List<Member> result = em.createQuery("select m from Member m where m.name = :name", Member.class)
+                .setParameter("name", name)
                 .getResultList();
 
-        return result.stream().findAny();
+        // 만약 리스트가 비어있거나, 여러 명의 멤버가 존재하면 null을 반환
+        return result.isEmpty() ? null : result.get(0);
     }
+
 
     @Override
     public List<Member> findByAll() {
