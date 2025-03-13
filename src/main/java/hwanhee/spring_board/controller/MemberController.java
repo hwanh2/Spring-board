@@ -6,12 +6,9 @@ import hwanhee.spring_board.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController  // @Controller 대신 @RestController 사용
 @RequestMapping("/members")
 public class MemberController {
     private final MemberService memberService;
@@ -21,13 +18,8 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @GetMapping("/signup")
-    public String signupForm(){
-        return "members/signup";
-    }
-
     @PostMapping("/signup")
-    public String signup(HttpSession session, @ModelAttribute MemberForm form){
+    public String signup(HttpSession session, @RequestBody MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
         member.setPassword(form.getPassword());
@@ -35,5 +27,4 @@ public class MemberController {
         session.setAttribute("name", member.getName());
         return "redirect:/";
     }
-
 }
